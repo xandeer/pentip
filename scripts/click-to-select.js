@@ -22,15 +22,15 @@ function handler(e) {
   e.stopPropagation();
 }
 
-chrome.storage.onChanged.addListener(({ selectors }) => {
+chrome.storage.onChanged.addListener(({ selectors, enabled }) => {
   if (selectors) {
     selectors.oldValue.forEach(unbindClickToSelect);
     selectors.newValue.forEach(bindClickToSelect);
   }
-});
 
-chrome.storage.onChanged.addListener(({ enabled }) => {
-  disabled = !enabled || !enabled.newValue;
+  if (enabled) {
+    disabled = !enabled.newValue;
+  }
 });
 
 chrome.storage.sync.get('selectors', ({ selectors }) => {
