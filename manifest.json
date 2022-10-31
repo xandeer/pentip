@@ -18,7 +18,7 @@
   "content_scripts": [
     {
       "js": [
-        "scripts/click-to-select.js"
+        "public/js/click-to-select.js"
       ],
       "matches": [
         "*://*/*"

@@ -1,0 +1,11 @@
+{
+  "name": "pentip",
+  "version": "0.0.1",
+  "scripts": {
+    "watch": "shadow-cljs watch pentip",
+    "release": "shadow-cljs release pentip"
+  },
+  "devDependencies": {
+    "shadow-cljs": "2.20.7"
+  }
+}
