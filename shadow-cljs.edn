@@ -5,13 +5,20 @@
   "src/test"]
 
  :dependencies
- []
+ [[reagent "1.1.1"]
+  [re-frame "1.3.0"]
+
+  [binaryage/devtools "1.0.6"]]
 
  :builds
  {:pentip
   {:target :browser
    :output-dir "public/js"
-   :asset-path "/js"
-   :modules {:click-to-select {:entries [pentip.click-to-select]}}
+   :asset-path "/public/js"
+   :modules {:shared {:entries []}
+             :click-to-select {:entries [pentip.click-to-select]
+                               :depends-on #{:shared}}
+             :popup {:init-fn pentip.popup/init
+                     :depends-on #{:shared}}}
    :devtools {:http-root "public"
               :http-port 8020}}}}

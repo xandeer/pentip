@@ -12,12 +12,12 @@
     "128": "images/icon-128.png"
   },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "public/popup.html"
   },
-  "options_page": "options.html",
   "content_scripts": [
     {
       "js": [
+        "public/js/shared.js",
         "public/js/click-to-select.js"
       ],
       "matches": [
